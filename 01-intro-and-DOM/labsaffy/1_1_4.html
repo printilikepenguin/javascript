@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>나의 포트폴리오</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>안녕하세요, 제 이름은 <b id="name">홍길동</b>입니다.</h1>
+  <img src="./profile.jpg" alt="profile image" width="200">
+  <h2>소개</h2>
+  <p>저는 <b id="job">[직업/전공]</b>으로 일하고 있습니다. <b id="experience">[간단한 경력/학력]</b>을 가지고 있으며, <b>[특기 또는 관심 분야]</b>에 대해 꾸준히 공부하고 있습니다.</p>
+  <h2>프로젝트</h2>
+  <ul id="list-group">
+    <li><b>프로젝트 1:</b> <span class="project-1">[프로젝트 1 제목]</span></li>
+    <li><b>프로젝트 2:</b> <span class="project-2">[프로젝트 2 제목]</span></li>
+    <li><b>프로젝트 3:</b> <span class="project-3">[프로젝트 3 제목]</span></li>
+  </ul>
+  <h2>연락처</h2>
+  <p>이메일: <b id="email">[이메일 주소]</b></p>
+  <p>전화번호: <b id="phone">[전화번호]</b></p>
+  <script>
+    // 1. body태그에 container 클래스 추가
+    const body = document.querySelector('body');
+    body.classList.add('container');
+
+    // 2. h1태그에 title 클래스 추가
+    const title = document.querySelector('h1');
+    title.classList.add('title');
+
+    // 3. image 태그에 img 클래스 추가
+    const image = document.querySelector('img');
+    image.classList.add('img');
+
+    // 4. id가 name, job, experience, email, phone인 요소에 highlight 클래스 추가
+    const highlights = document.querySelectorAll('#name, #job, #experience, #email, #phone');
+    highlightElements.forEach(element => {
+      element.classList.add('highlight');
+    });
+
+    // 5. 연락처 정보 하단에 sns 정보 추가
+    const sns = document.createElement('p');
+    sns.textContent = 'instagram @KimKim';
+
+    const contact = document.querySelector('h2:contains("연락처")')
+    contact.parentNode.appendChild(sns)
+  </script>
+</body>
+</html>

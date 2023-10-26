@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 동등 연산자를 활용한 조건문
+    if (0 == []) {
+      console.log('true?')
+    } else {
+      console.log('false?')
+    }
+    // 실행 결과 : true?
+
+    // 일치 연산자를 활용한 조건문
+    if ({} === false) {
+      console.log('true?')
+    } else {
+      console.log('false?')
+    }
+    // 실행 결과 : false?
+
+    // 논리 연산자를 활용한 단축 평가
+    console.log(0 && 13)
+    // 실행 결과 : 0
+    console.log(0 || 13)
+    // 실행 결과 : 13
+
+    let num = 12
+    num /= 3
+    console.log(num)
+    // 실행 결과 : 4
+
+    const number = 13
+    number++
+    // 실행 결과 : Uncaught TypeError: Assignment to constant variable.
+    // 화면에 띄우려면 console.log(number) 같이 작성해야함
+    // 오류를 해결하고 싶다면 변수 선언문 const를 let으로 바꾸면 됨
+
+    let number2 = 13
+    number2++ 
+    console.log(number2)
+  </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const square = (num) => num ** 2
+    console.log(square(2)) // 4
+
+    const sum = (num1, num2) => num1+num2
+    console.log(sum(10, 20)) // 30
+
+    const totalOfArrays = (nums) => {
+      let total = 0
+      for (num of nums) {
+        total += num
+      }
+      return total
+    };
+    console.log(totalOfArrays([1, 2, 3, 4, 5])) // 15
+
+    const defaultArgsFunction = (num1, num2) => {
+      if (num2 == null) {
+        return num1 * 2
+      } else {
+        return num1 * num2
+      }
+    }
+    console.log(defaultArgsFunction(2)) // 4
+    console.log(defaultArgsFunction(2, 3)) // 6
+  </script>
+</body>
+</html>

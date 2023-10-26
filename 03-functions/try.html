@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+        numbers = [1,2,3,4,5]
+        // 3.1.4. reduce
+        // 원본 배열 데이터를 활용해 특정 하나의 값을 얻고 싶을 때
+        // 예시 > 합계
+        // total:  누적값, element: 배열 각 요소, index: 배열 인덱스, array: 원본 배열, initalValue:초기값
+        let initialValue = 10
+        const sumValue = numbers.reduce((total, element, index, array) => {
+            return total + element
+        }, initialValue)
+        console.log(sumValue) // 15
+
+        // Quiz. 초기값 10으로 numbs 중 짝수만 더해라 > 결과 16
+        const sumValue2 = numbers.reduce((total, element) => {
+            if (element % 2 === 0) {
+                return total + element;
+            }
+            return total;
+            }, initialValue);
+        console.log(sumValue2) 
+
+                // 3.1.5. find 
+        // 배열에서 특정값을 찾아서 반환, 못찾으면 undefined 반환
+        let target = 3
+        const findNumber = numbers.find((element) => {
+            // 조건이 true 인 순간 검색 끝
+            return element === target
+        })
+        console.log(findNumber) // 3
+
+        // 3.1.6. some
+        // 특정 조건이 하나라도 맞으면 true, 모두 틀리면 false(one of)
+        const someNumber = numbers.some((element) => {
+            // 2보다 작은 게 하나라도 있으면 true
+            return element < 2
+        })
+        console.log(someNumber) // true
+
+        // 3.1.7. every
+        // 특정 조건이 모두 만족하면 true, 하나라도 틀리면 false(all of)
+        const everyFlag = numbers.every((element) => {
+            return element < 5
+        })
+        console.log(everyFlag)
+
+
+  </script>
+</body>
+</html>
