@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    work1(function () {
+      // first
+      work2(result1, function (result2) {
+        // second
+        work3(result2, function (result3) {
+          console.log('최종 결과 : ' + result3)
+        })
+      })
+    })
+  </script>
+  
+  <script>
+    work1()
+      .then((result1) => {
+        // work2
+        return result2
+      })
+      .then((result2) => {
+        // work3
+        return result3
+      })
+      .catch((error) => {
+        // error handling
+      })
+  </script>
+</body>
+</html>
